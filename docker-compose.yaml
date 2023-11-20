@@ -7,7 +7,7 @@ volumes:
   walletstore:
 
 networks:
-  dnb:
+  prod:
     name: fabric_prod
 
 services:
@@ -28,7 +28,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
-      - dnb
+      - prod
 
   explorer.dnb:
     image: ghcr.io/hyperledger-labs/explorer:latest
@@ -56,4 +56,4 @@ services:
       explorerdb.dnb:
         condition: service_healthy
     networks:
-      - dnb
+      - prod
