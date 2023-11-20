@@ -8,7 +8,7 @@
 			"password": "exploreradminpw"
 		},
 		"enableAuthentication": true,
-		"organization": "Org1MSP",
+		"organization": "OrgAABMSP",
 		"connection": {
 			"timeout": {
 				"peer": {
@@ -19,15 +19,15 @@
 		}
 	},
 	"channels": {
-		"mychannel": {
+		"bondchannel": {
 			"peers": {
 				"peer1.aab.dnb": {}
 			}
 		}
 	},
 	"organizations": {
-		"Org1MSP": {
-			"mspid": "Org1MSP",
+		"OrgAABMSP": {
+			"mspid": "OrgAABMSP",
 			"adminPrivateKey": {
 				"path": "/tmp/crypto/peerOrganizations/aab.dnb/users/Admin@aab.dnb/msp/keystore/key.pem"
 			},
