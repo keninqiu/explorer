@@ -1,0 +1,48 @@
+{
+	"name": "prod-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer1.aab.dnb": {}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/aab.dnb/users/Admin@aab.dnb/msp/keystore/a1aff1399509f25fe67f728b33f0e52360b348173b4c876eea6dcc8a49eba3b4_sk"
+			},
+			"peers": ["peer1.aab.dnb"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/aab.dnb/users/Admin@aab.dnb/msp/signcerts/cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer1.aab.dnb": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/aab.dnb/tlsca/tlsca.aab.dnb-cert.pem"
+			},
+			"url": "grpcs://peer1.aab.dnb:7051"
+		}
+	}
+}
